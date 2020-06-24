@@ -18,7 +18,10 @@ class CreateTeamsTable extends Migration
             $table->string('name');
             $table->string('logo_uri');
             $table->string('club_state');
-            $table->string('current-captain');
+            $table->string('total_matches');
+            $table->string('coach');
+            $table->string('manager');
+            $table->string('captain');
         });
     }
 
