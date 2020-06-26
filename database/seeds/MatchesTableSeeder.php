@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class PlayersTableSeeder extends Seeder
+class MatchesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +11,6 @@ class PlayersTableSeeder extends Seeder
      */
     public function run()
     {
-        $players = factory(App\Player::class, 150)->create();
+        $matches = factory(App\Match::class, 20)->create();
     }
 }
