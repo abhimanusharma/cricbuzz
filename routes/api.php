@@ -21,3 +21,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::resource('teams', 'TeamsController')->only([
     'index', 'show'
 ]);
+
+Route::resource('matches', 'MatchesController')->only([
+    'index', 'show'
+]);
