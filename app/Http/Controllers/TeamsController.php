@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Team;
+use App\Player;
+use App\Match;
 class TeamsController extends Controller
 {
     public function index()
@@ -12,12 +14,7 @@ class TeamsController extends Controller
     }
 
     public function show($id)
-    {
-        $team = Team::find($id);
-        $players = \App\Player::where('team_id', $team->id)->get();
-        $matches = \App\Match::where('team1_id', $team->id)
-                    ->orwhere('team2_id', $team->id)->get();
-
-        return response()->json(["team"=>$team,"players"=>$players,"matches"=>$matches]);
+    {   $team = Team::with('players', 'team1Matches', 'team2Matches')->find($id);
+        return response()->json($team);
     }
 }
