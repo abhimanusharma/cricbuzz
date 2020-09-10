@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:front": "ng build --aot && rm -f ../../public/.js && rm -f ../../public/.css && rm -f ../../public/.ico && cp dist/frontend/*.js ../../public/ && cp dist/frontend/*.ico ../../public/ && cp dist/frontend/index.html ../views/index.html",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
