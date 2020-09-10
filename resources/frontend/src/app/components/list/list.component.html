@@ -1,0 +1,7 @@
+<h4>Fixtures</h4>
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let match of matches | paginate: { itemsPerPage: 5, currentPage: page }">
+    <h6><small>{{match.team1.name}}</small> VS <small>{{match.team2.name}}</small></h6>
+    <small>{{match.created_at | date: 'dd-MM-yyyy'}}</small> | <small>{{match.created_at | date: 'HH:mm:ss'}}</small>
+  </li>
+</ul>
